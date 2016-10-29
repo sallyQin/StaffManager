@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEAEA"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="cn.studyjams.s1.sj52.staffmanagementsystem.MainActivity">
+
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="35dp">
+        <ImageView
+            android:src="@drawable/title_icon"
+            android:layout_marginRight="14dp"
+            android:layout_width="90dp"
+            android:layout_height="match_parent" />
+        <SearchView
+            android:queryHint="名字、员工号"
+            android:showAsAction="collapseActionView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        </SearchView>
+    </LinearLayout>
+    <View
+        android:background="#CFCFCF"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/incrementBtn"
+            android:layout_gravity="right"
+            android:gravity ="center"
+            android:src="@drawable/increment_icon"
+            android:layout_width="29dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="增加人员"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:textColor="#00688B"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:weightSum="5"
+        android:layout_height="35dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/admin"
+                android:onClick="tabClicked"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/admin"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp" />
+            <View
+                android:id="@+id/admin_line"
+                android:layout_marginRight="10dp"
+                android:visibility="invisible"
+                android:background="#3A5FCD"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/financial"
+                android:onClick="tabClicked"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/financial"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp" />
+            <View
+                android:id="@+id/financial_line"
+                android:layout_marginRight="10dp"
+                android:visibility="invisible"
+                android:background="#3A5FCD"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/technical"
+                android:onClick="tabClicked"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/technical"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp" />
+            <View
+                android:id="@+id/technical_line"
+                android:layout_marginRight="10dp"
+                android:visibility="invisible"
+                android:background="#3A5FCD"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/sales"
+                android:onClick="tabClicked"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/sales"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp" />
+            <View
+                android:id="@+id/sales_line"
+                android:layout_marginRight="10dp"
+                android:visibility="invisible"
+                android:background="#3A5FCD"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/management"
+                android:onClick="tabClicked"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/management"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp" />
+            <View
+                android:id="@+id/management_line"
+                android:visibility="invisible"
+                android:background="#3A5FCD"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <View
+        android:background="#CFCFCF"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_marginTop="8dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+
+</LinearLayout>
+
+
+
+
