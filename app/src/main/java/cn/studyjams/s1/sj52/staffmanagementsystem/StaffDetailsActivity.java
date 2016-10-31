@@ -29,19 +29,19 @@ import java.net.URI;
 import static android.R.attr.tag;
 
 public class StaffDetailsActivity extends AppCompatActivity {
-    TextView details_name_text;
-    TextView staffNum_details_text;
-    TextView details_dept;
-    TextView name_text;
+    EditText details_name_text;
+    EditText staffNum_details_text;
+    EditText details_dept;
+    EditText name_text;
     SimpleDraweeView simpleDraweeView;
-    TextView position_text;
-    TextView sex_text;
-    TextView nativePlace_text;
-    TextView nationality_text;
-    TextView nation_text;
+    EditText position_text;
+    EditText sex_text;
+    EditText  nativePlace_text;
+    EditText  nationality_text;
+    EditText  nation_text;
     EditText maternityStatus_text;
-    TextView birthDate_text;
-    EditText phoneNums_text;
+    EditText  birthDate_text;
+    EditText  phoneNums_text;
     EditText officeSeat_text;
     EditText mailAddress_text;
     EditText address_text;
@@ -50,7 +50,9 @@ public class StaffDetailsActivity extends AppCompatActivity {
     String saved_id; //保存的员工号
     final String TAG = "StaffDetailsActivity";
     int REQUEST_CAMERA = 1;
-    int REQUEST_ALBUM_OK = 2;
+    int REQUEST_ALBUM_OK = 2; //相册requestCode
+    Intent intent;
+    Bundle bundle;
 
 
 
@@ -58,18 +60,18 @@ public class StaffDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_staff_details);
-        details_name_text =(TextView) findViewById(R.id.details_name);
-        staffNum_details_text = (TextView) findViewById(R.id.staffNum_details);
-        details_dept = (TextView) findViewById(R.id.details_dept);
-        name_text = (TextView) findViewById(R.id.name_text);
+        details_name_text = (EditText) findViewById(R.id.details_name);
+        staffNum_details_text = (EditText) findViewById(R.id.staffNum_details);
+        details_dept = (EditText) findViewById(R.id.details_dept);
+        name_text = (EditText) findViewById(R.id.name_text);
         simpleDraweeView = (SimpleDraweeView) findViewById(R.id.simpleDraweeView);
-        position_text = (TextView) findViewById(R.id.details_position);
-        sex_text = (TextView) findViewById(R.id.sex_text);
-        nativePlace_text = (TextView) findViewById(R.id.nativePlace_text);
-        nationality_text = (TextView) findViewById(R.id.nationality_text );
-        nation_text = (TextView) findViewById(R.id.nation_text);
+        position_text = (EditText) findViewById(R.id.details_position);
+        sex_text = (EditText) findViewById(R.id.sex_text);
+        nativePlace_text = (EditText) findViewById(R.id.nativePlace_text);
+        nationality_text = (EditText) findViewById(R.id.nationality_text );
+        nation_text = (EditText) findViewById(R.id.nation_text);
         maternityStatus_text  = (EditText) findViewById(R.id.details_maternityStatus);
-        birthDate_text  = (TextView) findViewById(R.id.birthDate_text);
+        birthDate_text  = (EditText) findViewById(R.id.birthDate_text);
         phoneNums_text  = (EditText) findViewById(R.id.details_phoneNums);
         officeSeat_text = (EditText) findViewById(R.id.details_officeSeat);
         mailAddress_text  = (EditText) findViewById(R.id.details_mailbox);
@@ -77,12 +79,14 @@ public class StaffDetailsActivity extends AppCompatActivity {
         qq_text  = (EditText) findViewById(R.id.details_qq);
         weChatNum_text = (EditText) findViewById(R.id.details_weChatNum);
 
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
+        intent = getIntent();
+        bundle = intent.getExtras();
 
         if (bundle != null) {
             saved_id = bundle.getString("save_number");
             details_name_text.setText(bundle.getString("save_name"));
+            details_name_text.setEnabled(false);
+
             staffNum_details_text.setText(bundle.getString("save_number"));
             details_dept.setText(bundle.getString("save_dept"));
             name_text.setText(bundle.getString("save_name"));
@@ -110,6 +114,17 @@ public class StaffDetailsActivity extends AppCompatActivity {
             weChatNum_text.setText(bundle.getString("save_weChat"));
 
         }
+        else{
+            details_name_text.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    details_name_text.setEnabled(true);
+
+
+                }
+            });
+        }
+
 
         simpleDraweeView.setOnClickListener(new View.OnClickListener() {   //点击换头像
             @Override
@@ -119,7 +134,6 @@ public class StaffDetailsActivity extends AppCompatActivity {
         });
 
    }
-
 
 
     /** 打开相册 **/

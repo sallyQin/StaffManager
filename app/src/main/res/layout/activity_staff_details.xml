@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="8dp"
+    android:paddingBottom="0dp"
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
@@ -19,19 +19,20 @@
     <LinearLayout
         android:background="@drawable/details_title_background"
         android:orientation="horizontal"
-        android:paddingTop="12dp"
         android:scaleType="fitXY"
         android:layout_width="match_parent"
-        android:layout_height="125dp" >
+        android:paddingTop="4dp"
+        android:layout_height="120dp" >
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/simpleDraweeView"
             app:roundAsCircle="true"
             app:placeholderImage="@drawable/default_avatar"
             app:placeholderImageScaleType="centerCrop"
+            android:paddingTop="18dp"
             android:layout_marginLeft="8dp"
             android:layout_width="90dp"
-            android:layout_height="90dp"/>
+            android:layout_height="108dp"/>
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -44,14 +45,15 @@
                 <EditText
                     android:id="@+id/details_name"
                     android:hint="填姓名"
-                    android:textColorHint="#8B7B8B"
+                    android:background="@null"
+                    android:textColorHint="#BEBEBE"
                     android:textColor="@android:color/background_dark"
                     android:imeOptions="actionDone"
                     android:maxLength="4"
                     android:inputType="text"
-                    android:enabled="false"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:gravity="top"
                     android:layout_gravity="top"
                     android:layout_width="wrap_content"
                     android:layout_height="41dp" />
@@ -66,20 +68,21 @@
                     android:layout_gravity="top"
                     android:textSize="15sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="16dp" />
+                    android:layout_height="21dp" />
                 <EditText
                     android:id="@+id/staffNum_details"
-                    android:hint="点击填工号"
-                    android:textColorHint="#8B7B8B"
+                    android:onClick="isClicked"
+                    android:background="@null"
+                    android:hint="填工号"
+                    android:textColorHint="#BEBEBE"
                     android:gravity="bottom"
                     android:textColor="#696969"
                     android:textSize="15sp"
                     android:imeOptions="actionDone"
-                    android:enabled="false"
                     android:layout_marginRight="10dp"
                     android:maxLength="3"
                     android:layout_width="wrap_content"
-                    android:layout_height="38dp" />
+                    android:layout_height="28dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -87,7 +90,7 @@
                 android:layout_marginBottom="1dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="38dp">
+                android:layout_height="25dp">
                 <TextView
                     android:text="任职部门："
                     android:textColor="#696969"
@@ -95,25 +98,30 @@
                     android:textSize="15sp"
                     android:layout_marginRight="12dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="17dp" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_dept"
+                    android:background="@null"
+                    android:onClick="isClicked"
+                    android:hint="填写部门"
+                    android:textColorHint="#BEBEBE"
                     android:textColor="#696969"
                     android:textSize="15sp"
                     android:maxLength="5"
                     android:imeOptions="actionDone"
-                    android:enabled="false"
                     android:layout_marginRight="20dp"
+                    android:gravity="top"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:layout_height="20dp" />
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginBottom="1dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="38dp">
+                android:layout_height="25dp">
                 <TextView
                     android:text="职位名称："
                     android:textColor="#696969"
@@ -121,17 +129,20 @@
                     android:gravity="bottom"
                     android:layout_marginRight="12dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="17dp" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_position"
+                    android:onClick="isClicked"
+                    android:hint="填写职务"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:textColor="#696969"
                     android:textSize="15sp"
                     android:maxLength="5"
                     android:imeOptions="actionDone"
-                    android:enabled="false"
                     android:layout_marginRight="20dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="20dp"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -226,27 +237,29 @@
             android:layout_width="1dp"
             android:layout_height="match_parent"/>
         <LinearLayout
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="42dp">
+            android:layout_height="20dp">
             <TextView
                 android:text="姓名"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
                 android:textSize="12sp"
                 android:layout_marginRight="10dp"
                 android:layout_width="48dp"
-                android:gravity="bottom"
-                android:layout_height="13dp" />
+                android:layout_height="match_parent" />
             <EditText
                 android:id="@+id/name_text"
-                android:layout_marginTop="8dp"
+                android:onClick="isClicked"
+                android:hint="填写姓名"
+                android:textColorHint="#BEBEBE"
+                android:background="@null"
                 android:inputType="text"
                 android:maxLength="4"
                 android:textSize="12sp"
                 android:enabled="false"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="16dp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -254,10 +267,27 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
+        <LinearLayout
+            android:orientation="vertical"
             android:background="#F0F0F0"
             android:layout_width="93dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+        <View
+            android:layout_width="93dp"
+            android:layout_weight="1"
+            android:layout_height="0dp" />
+          <TextView
+              android:layout_marginLeft="10dp"
+              android:gravity="center"
+              android:drawableLeft="@android:drawable/ic_menu_save"
+              android:textStyle="bold"
+              android:textSize="13sp"
+              android:text="保存"
+              android:layout_marginBottom="30dp"
+              android:layout_gravity="bottom"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" />
+        </LinearLayout>
         <View
             android:background="#D6D6D6"
             android:layout_width="1dp"
@@ -269,103 +299,118 @@
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="34dp">
+                android:layout_height="20dp">
                 <TextView
                     android:text="性别"
                     android:textSize="12sp"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:gravity="bottom"
-                    android:layout_height="13dp" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/sex_text"
+                    android:onClick="isClicked"
+                    android:hint="填写性别"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:maxLength="2"
                     android:inputType="text"
                     android:enabled="false"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="34dp">
+                android:layout_height="20dp">
                 <TextView
                     android:text="籍贯"
                     android:textSize="12sp"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:gravity="bottom"
-                    android:layout_height="13dp" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/nativePlace_text"
+                    android:onClick="isClicked"
+                    android:hint="填写籍贯"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:maxLength="3"
                     android:inputType="text"
                     android:enabled="false"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="34dp">
+                android:layout_height="20dp">
                 <TextView
                     android:text="国籍"
                     android:textSize="12sp"
-                    android:gravity="bottom"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:layout_height="13dp" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/nationality_text"
+                    android:onClick="isClicked"
+                    android:hint="填写国籍"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:maxLength="2"
                     android:inputType="text"
                     android:enabled="false"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="34dp">
+                android:layout_height="20dp">
                 <TextView
                     android:text="民族"
                     android:textSize="12sp"
-                    android:gravity="bottom"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:layout_height="13dp" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/nation_text"
+                    android:onClick="isClicked"
+                    android:hint="填写民族"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:maxLength="2"
                     android:inputType="text"
                     android:enabled="false"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="34dp">
+                android:layout_height="20dp">
                 <TextView
                     android:text="婚姻状况"
                     android:textSize="12sp"
-                    android:gravity="bottom"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:layout_height="13dp" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_maternityStatus"
+                    android:onClick="isClicked"
+                    android:hint="填写婚姻状况"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:imeOptions="actionDone"
                     android:maxLength="2"
                     android:inputType="text"
@@ -373,7 +418,7 @@
                     android:maxLines="1"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
                 <View
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -385,7 +430,7 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundmodify_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
                 <ImageView
                     android:id="@+id/maternityStatus_correct_btn"
                     android:onClick="confirmedBtnClicked"
@@ -393,30 +438,33 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundcorrect_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="8dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="34dp">
+                android:layout_height="20dp">
                 <TextView
                     android:text="出生年月"
                     android:textSize="12sp"
-                    android:gravity="bottom"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:layout_height="13dp" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/birthDate_text"
+                    android:onClick="isClicked"
+                    android:hint="填写出生日期"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:imeOptions="actionDone"
                     android:textSize="12sp"
                     android:enabled="false"
                     android:maxLines="1"
                     android:maxLength="10"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -452,25 +500,28 @@
                 android:layout_height="1dp"/>
             <LinearLayout
                 android:layout_marginTop="12dp"
-                android:layout_marginBottom="6dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="20dp">
                 <TextView
                     android:text="手机号"
                     android:textSize="12sp"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_phoneNums"
+                    android:onClick="isClicked"
+                     android:hint="填写手机号"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:enabled="false"
                     android:inputType="phone"
                     android:imeOptions="flagNoExtractUi|actionDone"
                     android:maxLength="11"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="16dp" />
                 <View
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -482,7 +533,7 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundmodify_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
                 <ImageView
                     android:id="@+id/phoneNum_correct_btn"
                     android:onClick="confirmedBtnClicked"
@@ -490,21 +541,25 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundcorrect_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginBottom="6dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="20dp">
                 <TextView
                     android:text="办公座位"
                     android:textSize="12sp"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_officeSeat"
+                    android:onClick="isClicked"
+                    android:hint="填写办公座位号"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:imeOptions="flagNoExtractUi|actionDone"
                     android:enabled="false"
                     android:inputType="number"
@@ -512,7 +567,7 @@
                     android:maxLines="1"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="16dp" />
                 <View
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -524,7 +579,7 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundmodify_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
                 <ImageView
                     android:id="@+id/fixlinePhone_correct_btn"
                     android:onClick="confirmedBtnClicked"
@@ -532,28 +587,32 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundcorrect_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginBottom="6dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="20dp">
                 <TextView
                     android:text="邮箱"
                     android:textSize="12sp"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_mailbox"
+                    android:onClick="isClicked"
+                    android:hint="填写邮箱信息"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:imeOptions="actionDone"
                     android:enabled="false"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="16dp" />
                 <View
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -565,7 +624,7 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundmodify_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
                 <ImageView
                     android:id="@+id/mailbox_correct_btn"
                     android:onClick="confirmedBtnClicked"
@@ -573,21 +632,25 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundcorrect_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginBottom="6dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="20dp">
                 <TextView
                     android:text="通讯地址"
                     android:textSize="12sp"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_address"
+                    android:onClick="isClicked"
+                     android:hint="填写通讯地址"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:imeOptions="actionDone"
                     android:enabled="false"
                     android:inputType="text"
@@ -595,7 +658,7 @@
                     android:textSize="12sp"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="16dp" />
                 <ImageView
                     android:id="@+id/address_modify_btn"
                     android:onClick="modifyBtnClicked"
@@ -603,7 +666,7 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundmodify_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
                 <ImageView
                     android:id="@+id/address_correct_btn"
                     android:onClick="confirmedBtnClicked"
@@ -611,28 +674,32 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundcorrect_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginBottom="6dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="20dp">
                 <TextView
                     android:text="QQ号"
                     android:textSize="12sp"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_qq"
+                    android:onClick="isClicked"
+                    android:hint="填写QQ号码"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:imeOptions="actionDone"
                     android:enabled="false"
                     android:digits="1234567890"
                     android:maxLines="1"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="16dp" />
                 <View
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -644,7 +711,7 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundmodify_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
                 <ImageView
                     android:id="@+id/qq_correct_btn"
                     android:onClick="confirmedBtnClicked"
@@ -652,27 +719,31 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundcorrect_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_marginBottom="6dp"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="20dp">
                 <TextView
                     android:text="微信号"
                     android:textSize="12sp"
                     android:layout_marginRight="10dp"
                     android:layout_width="48dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_weChatNum"
+                    android:onClick="isClicked"
+                    android:hint="填写微信号"
+                    android:textColorHint="#BEBEBE"
+                    android:background="@null"
                     android:imeOptions="actionDone"
                     android:enabled="false"
                     android:maxLines="1"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent" />
                 <View
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -684,7 +755,7 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundmodify_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
                 <ImageView
                     android:id="@+id/weChatNum_correct_btn"
                     android:onClick="confirmedBtnClicked"
@@ -692,7 +763,7 @@
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/roundcorrect_corner_image"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="16dp" />
             </LinearLayout>
         </LinearLayout>
 
