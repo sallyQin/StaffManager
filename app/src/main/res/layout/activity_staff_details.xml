@@ -29,9 +29,9 @@
             app:roundAsCircle="true"
             app:placeholderImage="@drawable/default_avatar"
             app:placeholderImageScaleType="centerCrop"
-            android:paddingTop="18dp"
+            android:paddingTop="9dp"
             android:layout_marginLeft="8dp"
-            android:layout_width="90dp"
+            android:layout_width="85dp"
             android:layout_height="108dp"/>
         <LinearLayout
             android:orientation="vertical"
@@ -71,9 +71,8 @@
                     android:layout_height="21dp" />
                 <EditText
                     android:id="@+id/staffNum_details"
-                    android:onClick="isClicked"
                     android:background="@null"
-                    android:hint="填工号"
+                    android:hint="填后不可改"
                     android:textColorHint="#BEBEBE"
                     android:gravity="bottom"
                     android:textColor="#696969"
@@ -102,8 +101,8 @@
                 <EditText
                     android:id="@+id/details_dept"
                     android:background="@null"
-                    android:onClick="isClicked"
-                    android:hint="填写部门"
+                    android:hint="不用填，系统自动填"
+                    android:enabled="false"
                     android:textColorHint="#BEBEBE"
                     android:textColor="#696969"
                     android:textSize="15sp"
@@ -132,7 +131,6 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_position"
-                    android:onClick="isClicked"
                     android:hint="填写职务"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
@@ -183,7 +181,7 @@
             android:layout_height="match_parent"/>
         <TextView
             android:id="@+id/infos_edit"
-            android:text="编辑"
+            android:text="编辑栏"
             android:padding="8dp"
             android:layout_marginRight="20dp"
             android:layout_gravity="center_vertical"
@@ -250,14 +248,12 @@
                 android:layout_height="match_parent" />
             <EditText
                 android:id="@+id/name_text"
-                android:onClick="isClicked"
                 android:hint="填写姓名"
                 android:textColorHint="#BEBEBE"
                 android:background="@null"
                 android:inputType="text"
                 android:maxLength="4"
                 android:textSize="12sp"
-                android:enabled="false"
                 android:layout_width="wrap_content"
                 android:layout_height="16dp" />
         </LinearLayout>
@@ -277,6 +273,7 @@
             android:layout_weight="1"
             android:layout_height="0dp" />
           <TextView
+              android:id="@+id/save_icon"
               android:layout_marginLeft="10dp"
               android:gravity="center"
               android:drawableLeft="@android:drawable/ic_menu_save"
@@ -311,13 +308,11 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/sex_text"
-                    android:onClick="isClicked"
-                    android:hint="填写性别"
+                    android:hint="填写性别,填后不可改"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
                     android:maxLength="2"
                     android:inputType="text"
-                    android:enabled="false"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
                     android:layout_height="16dp" />
@@ -335,13 +330,11 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/nativePlace_text"
-                    android:onClick="isClicked"
-                    android:hint="填写籍贯"
+                    android:hint="填写籍贯,填后不可改"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
                     android:maxLength="3"
                     android:inputType="text"
-                    android:enabled="false"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
                     android:layout_height="16dp" />
@@ -359,13 +352,11 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/nationality_text"
-                    android:onClick="isClicked"
-                    android:hint="填写国籍"
+                    android:hint="填写国籍,填后不可改"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
                     android:maxLength="2"
                     android:inputType="text"
-                    android:enabled="false"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
                     android:layout_height="16dp" />
@@ -383,13 +374,11 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/nation_text"
-                    android:onClick="isClicked"
-                    android:hint="填写民族"
+                    android:hint="填写民族,填后不可改"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
                     android:maxLength="2"
                     android:inputType="text"
-                    android:enabled="false"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
                     android:layout_height="16dp" />
@@ -407,14 +396,12 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_maternityStatus"
-                    android:onClick="isClicked"
                     android:hint="填写婚姻状况"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
                     android:imeOptions="actionDone"
                     android:maxLength="2"
                     android:inputType="text"
-                    android:enabled="false"
                     android:maxLines="1"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
@@ -454,13 +441,12 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/birthDate_text"
-                    android:onClick="isClicked"
-                    android:hint="填写出生日期"
+                    android:hint="格式：xxxx年-xx月-xx日,填后不可改"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
+                    android:inputType="text"
                     android:imeOptions="actionDone"
                     android:textSize="12sp"
-                    android:enabled="false"
                     android:maxLines="1"
                     android:maxLength="10"
                     android:layout_width="wrap_content"
@@ -483,7 +469,7 @@
                     android:layout_height="match_parent"/>
                 <TextView
                     android:id="@+id/contacts_edit"
-                    android:text="编辑"
+                    android:text="编辑栏"
                     android:padding="8dp"
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="20dp"
@@ -511,11 +497,9 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_phoneNums"
-                    android:onClick="isClicked"
-                     android:hint="填写手机号"
+                    android:hint="填写手机号"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
-                    android:enabled="false"
                     android:inputType="phone"
                     android:imeOptions="flagNoExtractUi|actionDone"
                     android:maxLength="11"
@@ -556,12 +540,10 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_officeSeat"
-                    android:onClick="isClicked"
                     android:hint="填写办公座位号"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
                     android:imeOptions="flagNoExtractUi|actionDone"
-                    android:enabled="false"
                     android:inputType="number"
                     android:maxLength="4"
                     android:maxLines="1"
@@ -602,12 +584,10 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_mailbox"
-                    android:onClick="isClicked"
                     android:hint="填写邮箱信息"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
                     android:imeOptions="actionDone"
-                    android:enabled="false"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:textSize="12sp"
@@ -647,12 +627,10 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_address"
-                    android:onClick="isClicked"
-                     android:hint="填写通讯地址"
+                    android:hint="填写通讯地址"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
                     android:imeOptions="actionDone"
-                    android:enabled="false"
                     android:inputType="text"
                     android:maxLines="1"
                     android:textSize="12sp"
@@ -689,12 +667,10 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_qq"
-                    android:onClick="isClicked"
                     android:hint="填写QQ号码"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
                     android:imeOptions="actionDone"
-                    android:enabled="false"
                     android:digits="1234567890"
                     android:maxLines="1"
                     android:textSize="12sp"
@@ -734,12 +710,10 @@
                     android:layout_height="match_parent" />
                 <EditText
                     android:id="@+id/details_weChatNum"
-                    android:onClick="isClicked"
                     android:hint="填写微信号"
                     android:textColorHint="#BEBEBE"
                     android:background="@null"
                     android:imeOptions="actionDone"
-                    android:enabled="false"
                     android:maxLines="1"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"

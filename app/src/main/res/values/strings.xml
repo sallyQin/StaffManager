@@ -1,11 +1,12 @@
 <resources>
-    <string name="app_name">员工管理花名册</string>
+    <string name="app_name">员工花名册</string>
     <string name="title">各部门人员配置情况</string>
     <string name="admin">行政部</string>
     <string name="financial">财务部</string>
     <string name="technical">技术部</string>
     <string name="sales">销售部</string>
     <string name="management">管理层</string>
+    <string name="otherDept">其他部</string>
 
 
 </resources>

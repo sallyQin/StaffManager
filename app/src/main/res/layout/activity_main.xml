@@ -15,18 +15,37 @@
         android:layout_marginLeft="5dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="35dp">
+        android:layout_height="40dp">
         <ImageView
+            android:id="@+id/imageTitle"
             android:src="@drawable/title_icon"
-            android:layout_marginRight="14dp"
-            android:layout_width="90dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent" />
-        <SearchView
-            android:queryHint="名字、员工号"
-            android:showAsAction="collapseActionView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-        </SearchView>
+        <RelativeLayout
+            android:id="@+id/search_bar"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="33dp"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_marginRight="1dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|left"
+                    android:maxLines="1"
+                    android:background="@drawable/search_frame"
+                    android:paddingLeft="32dp"
+                    android:textSize="14sp"
+                    android:hint="     搜索..."/>
+            </RelativeLayout>
+        </RelativeLayout>
+
     </LinearLayout>
     <View
         android:background="#CFCFCF"
@@ -63,7 +82,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:weightSum="5"
+        android:weightSum="6"
         android:layout_height="35dp">
         <LinearLayout
             android:orientation="vertical"
@@ -73,7 +92,7 @@
             <TextView
                 android:id="@+id/admin"
                 android:onClick="tabClicked"
-                android:layout_marginRight="5dp"
+                android:layout_marginLeft="3dp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:text="@string/admin"
@@ -83,7 +102,7 @@
                 android:layout_height="33dp" />
             <View
                 android:id="@+id/admin_line"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="7dp"
                 android:visibility="invisible"
                 android:background="#3A5FCD"
                 android:layout_width="match_parent"
@@ -98,7 +117,8 @@
             <TextView
                 android:id="@+id/financial"
                 android:onClick="tabClicked"
-                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="7dp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:text="@string/financial"
@@ -108,7 +128,8 @@
                 android:layout_height="33dp" />
             <View
                 android:id="@+id/financial_line"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="7dp"
                 android:visibility="invisible"
                 android:background="#3A5FCD"
                 android:layout_width="match_parent"
@@ -133,7 +154,7 @@
                 android:layout_height="33dp" />
             <View
                 android:id="@+id/technical_line"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="7dp"
                 android:visibility="invisible"
                 android:background="#3A5FCD"
                 android:layout_width="match_parent"
@@ -158,7 +179,7 @@
                 android:layout_height="33dp" />
             <View
                 android:id="@+id/sales_line"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="7dp"
                 android:visibility="invisible"
                 android:background="#3A5FCD"
                 android:layout_width="match_parent"
@@ -174,6 +195,7 @@
                 android:id="@+id/management"
                 android:onClick="tabClicked"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginRight="5dp"
                 android:gravity="center"
                 android:text="@string/management"
                 android:textStyle="bold"
@@ -182,6 +204,32 @@
                 android:layout_height="33dp" />
             <View
                 android:id="@+id/management_line"
+                android:layout_marginRight="7dp"
+                android:visibility="invisible"
+                android:background="#3A5FCD"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/otherDept"
+                android:onClick="tabClicked"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:text="@string/otherDept"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="33dp" />
+            <View
+                android:id="@+id/other_line"
+                android:layout_marginRight="7dp"
                 android:visibility="invisible"
                 android:background="#3A5FCD"
                 android:layout_width="match_parent"

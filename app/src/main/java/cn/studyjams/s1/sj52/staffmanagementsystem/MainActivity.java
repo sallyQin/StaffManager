@@ -5,9 +5,12 @@ import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
-
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,11 +20,13 @@ public class MainActivity extends AppCompatActivity {
     TextView technical;
     TextView sales;
     TextView management;
+    TextView otherDept;
     View admin_line;
     View financial_line;
     View technical_line;
     View sales_line;
     View management_line;
+    View otherDept_line;
     ImageView incrementBtn;
 
     RecyclerView recyclerview;
@@ -31,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     boolean selected_tab3;
     boolean selected_tab4;
     boolean selected_tab5;
+    boolean selected_tab6;
+    RelativeLayout search_bar; //搜索框
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +49,26 @@ public class MainActivity extends AppCompatActivity {
         technical = (TextView) findViewById(R.id.technical);
         sales = (TextView) findViewById(R.id.sales);
         management = (TextView) findViewById(R.id.management);
+        otherDept = (TextView) findViewById(R.id.otherDept);
         admin_line = findViewById(R.id.admin_line);
         financial_line = findViewById(R.id.financial_line);
         technical_line = findViewById(R.id.technical_line);
         sales_line = findViewById(R.id.sales_line);
         management_line = findViewById(R.id.management_line);
+        otherDept_line = findViewById(R.id.other_line);
         incrementBtn = (ImageView) findViewById(R.id.incrementBtn);
+        search_bar = (RelativeLayout) findViewById(R.id.search_bar);
+
+
+        search_bar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         incrementBtn.setOnClickListener(new View.OnClickListener() {   //设置点击“增加”按钮的监听器
             @Override
@@ -78,6 +99,10 @@ public class MainActivity extends AppCompatActivity {
         management.getPaint().setFlags(Paint. UNDERLINE_TEXT_FLAG ); //下划线
         management.getPaint().setAntiAlias(true);//抗锯齿
         management.getPaint().setColor(0x4F94CD);
+        otherDept.setText("其他部");
+        otherDept.getPaint().setFlags(Paint. UNDERLINE_TEXT_FLAG ); //下划线
+        otherDept.getPaint().setAntiAlias(true);//抗锯齿
+        otherDept.getPaint().setColor(0x4F94CD);
 
 
         adapter = new RecyclerAdapter();
@@ -89,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportLoaderManager().restartLoader(1, null, adapter);//LoaderManager就是加载器的管理器，一个LoaderManager可管理一个或多个Loader，一个Activity只能有一个LoadManager。LoaderManager管理Loader的初始化，重启和销毁操作。
     }
 
-    public void tabClicked(View view){
+    public void tabClicked(View view){  //设置点击每个tab栏的监听事件。
 
         switch (view.getId()){
             case R.id.admin:
@@ -142,6 +167,19 @@ public class MainActivity extends AppCompatActivity {
                 }
                 getSupportLoaderManager().restartLoader(1, null, adapter);
                 break;
+            case R.id.otherDept:
+                if(selected_tab6){
+                    selected_tab6 = false;
+                    otherDept_line.setVisibility(View.INVISIBLE);
+                }else {
+                    selected_tab6 = true;
+                    otherDept_line.setVisibility(View.VISIBLE);
+                }
+                getSupportLoaderManager().restartLoader(1, null, adapter);
+                break;
+
         }
     }
+
+
 }

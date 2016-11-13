@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="cn.studyjams.s1.sj52.staffmanagementsystem">
-    <!--请求访问使用照相设备-->
-    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 请求访问使用相册 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-
     <application
-        android:name =".FrescoApplication"
+        android:name=".FrescoApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeNoActionBar">
-        <activity android:name=".MainActivity"
+        android:theme="@style/AppThemeNoActionBar"
+        tools:ignore="AllowBackup">
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,12 +26,25 @@
 
         <provider
             android:name=".DemoProvider"
-            android:authorities="sally.staffmanagementsystem" />
+            android:authorities="sally.staffmanagementsystem"
+            android:exported="false" />
 
-        <activity android:name=".StaffDetailsActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity
+            android:name=".StaffDetailsActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
+        <activity android:name=".SearchActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
-
 
 </manifest>

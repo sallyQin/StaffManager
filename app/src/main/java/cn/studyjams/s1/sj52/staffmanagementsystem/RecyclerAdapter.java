@@ -2,51 +2,48 @@ package cn.studyjams.s1.sj52.staffmanagementsystem;
 
 
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.facebook.drawee.view.SimpleDraweeView;
+
 
 
 /**
  * Created by Apc on 2016/10/9.
  */
-public class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManager.LoaderCallbacks {
+class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManager.LoaderCallbacks {
 
     MainActivity mainActivity;
-    Cursor mCursor;
-    String name_text;
-    String number_text;
-    String deptName_text;
-    String avatar;
-    String positions;
-    String sex;
-    String nativePlace;
-    String nationalities;
-    String nation;
-    String maternityStatus;
-    String birthDate;
-    String phoneNumber;
-    String officeSeat;
-    String mailAddress;
-    String address;
-    String qq;
-    String weChat;
+    private Cursor mCursor;
+    private String name_text;
+    private String number_text;
+    private String deptName_text;
+    private String avatar;
+    private String positions;
+    private String sex;
+    private String nativePlace;
+    private String nationalities;
+    private String nation;
+    private String maternityStatus;
+    private String birthDate;
+    private String phoneNumber;
+    private String officeSeat;
+    private String mailAddress;
+    private String address;
+    private String qq;
+    private String weChat;
 
     @Override
     public Loader onCreateLoader(int id, Bundle args) {
@@ -80,6 +77,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManag
             selection += "deptName = '管理层'";
         }
 
+        if (mainActivity.selected_tab6) {
+            if (!TextUtils.isEmpty(selection)) {
+                selection += " OR ";
+            }
+            selection += "deptName = '其他部'";
+        }
+
         return new CursorLoader(mainActivity, DemoProvider.URI,null, selection, null, null);
     }
 
@@ -103,9 +107,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManag
         mCursor = null;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    private class ViewHolder extends RecyclerView.ViewHolder{
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
         }
     }
@@ -173,8 +177,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManag
             public void onClick(View view) {
                 if(mCursor.moveToPosition(position)){
                     ContentResolver cr = mainActivity.getContentResolver(); //外界的程序通过ContentResolver接口可以访问ContentProvider提供的数据，在Activity当中通过getContentResolver()可以得到当前应用的 ContentResolver实例
-                    String whereName = "name = ?";
-                    String[] selectionArgsnName = { save_name };
+                    String whereName = "Number = ?";
+                    String[] selectionArgsnName = { save_number};
                     cr.delete(DemoProvider.URI, whereName, selectionArgsnName);
                 }
             }
@@ -183,7 +187,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManag
 
         recyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {  //????????????????????
+            public void onClick(View view) {
                 Intent intent=new Intent(mainActivity,StaffDetailsActivity.class);
                 Bundle bundle=new Bundle();
                 bundle.putString("save_name",save_name);
