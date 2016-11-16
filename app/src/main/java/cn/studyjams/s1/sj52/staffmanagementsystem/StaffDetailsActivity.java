@@ -16,10 +16,13 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -44,15 +47,27 @@ public class StaffDetailsActivity extends AppCompatActivity {
     EditText address_text;
     EditText qq_text;
     EditText weChatNum_text;
+    TextView personalInfo; //个人信息
+    TextView staffRecording;//员工簿
     String saved_id; //保存的员工号
     TextView saveDetails;//保存按钮
+    LinearLayout basicTitle;
+    LinearLayout staffBookDetailsTitle;
+    TextView staffBookDetailsTitle_content1;
+    LinearLayout basicInfo_content1;
+    LinearLayout staffBookDetailsTitle_content2;
+    LinearLayout basicInfo_content2;
+    TextView edu_hasNum; // "教育经历"用来显示剩余字数
+    EditText edu_editText; // "教育经历"编辑框
+    int edu_num = 250;// "教育经历"限制的最大字数
+    TextView workExp_hasNum;// "工作经历"用来显示剩余字数
+    EditText workExp_editText;// "工作经历"编辑框
+    int workExp_num = 420;// "工作经历"限制的最大字数
     final String TAG = "StaffDetailsActivity";
     private static final int SELECTED_PERMISSION_STORAGE = 1;
     private static final int REQUEST_ALBUM_OK = 2; //相册requestCode
     Intent intent;
     Bundle bundle;
-
-
 
 
     @Override
@@ -78,6 +93,151 @@ public class StaffDetailsActivity extends AppCompatActivity {
         qq_text = (EditText) findViewById(R.id.details_qq);
         weChatNum_text = (EditText) findViewById(R.id.details_weChatNum);
         saveDetails = (TextView) findViewById(R.id.save_icon);
+        personalInfo = (TextView) findViewById(R.id.personalInfo);
+        staffRecording = (TextView) findViewById(R.id.staffRecording);
+        basicTitle = (LinearLayout) findViewById(R.id.basicTitle);
+        staffBookDetailsTitle = (LinearLayout) findViewById(R.id.staffBookDetailsTitle);
+        staffBookDetailsTitle_content1 = (TextView) findViewById(R.id.staffBookDetailsTitle_content1);
+        basicInfo_content1 = (LinearLayout) findViewById(R.id.basicInfo_content1);
+        staffBookDetailsTitle_content2 = (LinearLayout) findViewById(R.id.staffBookDetailsTitle_content2);
+        basicInfo_content2 = (LinearLayout) findViewById(R.id.basicInfo_content2);
+        edu_hasNum = (TextView) findViewById(R.id.tv_num);
+        edu_editText = (EditText) findViewById(R.id.edu_editText);
+        workExp_hasNum = (TextView) findViewById(R.id.work_num);
+        workExp_editText = (EditText) findViewById(R.id.work_editText);
+        checkStaffRecordingStatus(false);
+
+        edu_hasNum.setText("限" + edu_num + "" + "字以内");
+/**
+ * "教育经历"编辑框的实时监控
+ **/
+        edu_editText.addTextChangedListener(new TextWatcher() {
+
+            private CharSequence temp;//实时记录输入的字数
+
+            private int selectionStart;
+
+            private int selectionEnd;
+
+            @Override
+
+            public void onTextChanged(CharSequence s, int start, int before,
+
+                                      int count) {
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count,
+
+                                          int after) {
+
+                temp = s;//实时记录输入的字数
+
+            }
+
+            public void afterTextChanged(Editable s) {
+
+                // TODO Auto-generated method stub
+
+                int number = edu_num - s.length();
+
+                //edu_hasNum 显示剩余字数
+                edu_hasNum.setText("剩余" + "" + number + "个字");
+
+                selectionStart = edu_editText.getSelectionStart();
+
+                selectionEnd = edu_editText.getSelectionEnd();
+
+                if (temp.length() > edu_num) {
+                    //删除多余输入的字（不会显示出来）
+                    s.delete(selectionStart - 1, selectionEnd);
+
+                    int tempSelection = selectionEnd;
+
+                    edu_editText.setText(s);
+
+                    edu_editText.setSelection(tempSelection);// 设置光标在最后
+
+                }
+
+            }
+
+        });
+
+
+        workExp_hasNum.setText("限" + workExp_num + "" + "字以内");
+/**
+ * "工作经历"编辑框的实时监控
+ **/
+        workExp_editText.addTextChangedListener(new TextWatcher() {
+
+            private CharSequence workExp_temp;//实时记录输入的字数
+
+            private int workExp_selectionStart;
+
+            private int workExp_selectionEnd;
+
+            @Override
+
+            public void onTextChanged(CharSequence s, int start, int before,
+
+                                      int count) {
+
+            }
+
+            public void beforeTextChanged(CharSequence s, int start, int count,
+
+                                          int after) {
+
+                workExp_temp = s;//实时记录输入的字数
+
+            }
+
+            public void afterTextChanged(Editable s) {
+
+                // TODO Auto-generated method stub
+
+                int number = workExp_num - s.length();
+
+                // workExp_hasNum 显示剩余字数
+                workExp_hasNum.setText("剩余" + "" + number + "个字");
+
+                workExp_selectionStart = workExp_editText.getSelectionStart();
+
+                workExp_selectionEnd = workExp_editText.getSelectionEnd();
+
+                if (workExp_temp.length() > workExp_num) {
+                    //删除多余输入的字（不会显示出来）
+                    s.delete(workExp_selectionStart - 1, workExp_selectionEnd);
+
+                    int tempSelection = workExp_selectionEnd;
+
+                    workExp_editText.setText(s);
+
+                    workExp_editText.setSelection(tempSelection);// 设置光标在最后
+
+                }
+
+            }
+
+        });
+        /**
+         * check 个人信息或员工薄是否在被点中的状态
+         **/
+        personalInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkStaffRecordingStatus(false);
+
+            }
+        });
+        staffRecording.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkStaffRecordingStatus(true);
+            }
+        });
+
 
         intent = getIntent();
         bundle = intent.getExtras();
@@ -211,6 +371,12 @@ public class StaffDetailsActivity extends AppCompatActivity {
                 weChatNum_text.setEnabled(false);
             }
 
+            if (!TextUtils.isEmpty(bundle.getString("save_eduExperience"))) {
+                edu_editText.setText(bundle.getString("save_eduExperience"));
+            }
+            if (!TextUtils.isEmpty(bundle.getString("save_workExperience"))) {
+                workExp_editText.setText(bundle.getString("save_workExperience"));
+            }
         }
 
 
@@ -251,6 +417,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
+                            contentValues.put("eduExperience",edu_editText.getText().toString());
+                            contentValues.put("workExperience",workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
                         } else if (num == 0 && staffNum_details_text.getText().toString().startsWith("2")) { //2开头的，部门为"行政部"。
@@ -271,6 +439,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
+                            contentValues.put("eduExperience",edu_editText.getText().toString());
+                            contentValues.put("workExperience",workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
                         } else if (num == 0 && staffNum_details_text.getText().toString().startsWith("3")) { //3开头的，部门为"技术部"。
@@ -291,6 +461,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
+                            contentValues.put("eduExperience",edu_editText.getText().toString());
+                            contentValues.put("workExperience",workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
                         } else if (num == 0 && staffNum_details_text.getText().toString().startsWith("4")) { //4开头的，部门为"销售部"。
@@ -311,6 +483,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
+                            contentValues.put("eduExperience",edu_editText.getText().toString());
+                            contentValues.put("workExperience",workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
                         } else if (num == 0 && staffNum_details_text.getText().toString().startsWith("8")) { //8开头的，部门为"管理层"。
@@ -331,9 +505,11 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
+                            contentValues.put("eduExperience",edu_editText.getText().toString());
+                            contentValues.put("workExperience",workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
-                        } else if (num == 0) { //员工已其它数字开头的，部门为"其他部"。
+                        } else if (num == 0) { //员工以其它数字开头的，部门为"其他部"。
                             ContentValues contentValues = new ContentValues();
                             contentValues.put("name", details_name_text.getText().toString());
                             contentValues.put("number", staffNum_details_text.getText().toString());
@@ -351,6 +527,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
+                            contentValues.put("eduExperience",edu_editText.getText().toString());
+                            contentValues.put("workExperience",workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
                         } else if (num == 1) {  //当此员工号已存在时，点击保存更新的内容。
@@ -369,6 +547,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
+                            contentValues.put("eduExperience",edu_editText.getText().toString());
+                            contentValues.put("workExperience",workExp_editText.getText().toString());
 
                             String where = "number = ?";
                             String[] whereArgs = new String[]{staffNum_details_text.getText().toString()};
@@ -380,16 +560,19 @@ public class StaffDetailsActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
-    /**  动态获取相册读写权限（安卓6.0，版本23以上时），则需要在开启相册前多加2步： **/
+    /**
+     * 动态获取相册读写权限（安卓6.0，版本23以上时），则需要在开启相册前多加2步：
+     **/
 
     // 1. 检查并申请权限判断是否已拥有读写的权限，如有直接显示相册，如无则要求权限。
     private void showAlbum() {
         int checkWritePermission = ContextCompat.checkSelfPermission(StaffDetailsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         //1.权限还未授予，申请权限
         //1.1向用户解释,为何要申请该权限.
-        if(checkWritePermission != PackageManager.PERMISSION_GRANTED){
+        if (checkWritePermission != PackageManager.PERMISSION_GRANTED) {
             if (!ActivityCompat.shouldShowRequestPermissionRationale(StaffDetailsActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                 //显示解释用户权限的对话框，若选择”确定” ，将不再出现该解释对话框。“取消”则会再次出现 解释对话框。
                 showMessageOKCancel("请允许授权，否则会导致无法查阅你相册中的图片！",
@@ -405,8 +588,7 @@ public class StaffDetailsActivity extends AppCompatActivity {
             }      //1.2 用户选择  “确定”，直接跳出请给予权限的要求.
             String[] mPermissionList = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}; //1.2-1 需要申请哪些些权限，可申请一个或多个。
             ActivityCompat.requestPermissions(StaffDetailsActivity.this, mPermissionList, SELECTED_PERMISSION_STORAGE);//1.2-2申请权限
-        }
-        else {//权限已经被授予(如：6.0以下版本会直接授予权限)，直接跳到给予权限的请求.
+        } else {//权限已经被授予(如：6.0以下版本会直接授予权限)，直接跳到给予权限的请求.
             showAlbumDirectly();
         }
     }
@@ -416,7 +598,7 @@ public class StaffDetailsActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         //请求相册的回调：
-        switch (requestCode){
+        switch (requestCode) {
             case SELECTED_PERMISSION_STORAGE:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(this, "现在你已开启相机了权限", Toast.LENGTH_SHORT).show();// Permission Granted
@@ -429,7 +611,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                 break;
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }}
+        }
+    }
 
 
     //解释为何要授权的  对话框
@@ -442,9 +625,10 @@ public class StaffDetailsActivity extends AppCompatActivity {
                 .show();
     }
 
-    /**.
+    /**
+     * .
      * 开启相册（这里写的是一个调起相册）
-     * **/
+     **/
     private void showAlbumDirectly() {
         Intent albumIntent = new Intent(Intent.ACTION_PICK, null);
         albumIntent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
@@ -469,6 +653,36 @@ public class StaffDetailsActivity extends AppCompatActivity {
                 getContentResolver().update(DemoProvider.URI, contentValues, "number = ?", new String[]{saved_id});
 
             }
+        }
+    }
+
+    public void checkStaffRecordingStatus(boolean staffRecordingIsClicked) {   //check 个人信息或员工薄是否在被点中的状态
+        if (!staffRecordingIsClicked) {
+            basicTitle.setVisibility(View.VISIBLE);
+            basicInfo_content1.setVisibility(View.VISIBLE);
+            basicInfo_content2.setVisibility(View.VISIBLE);
+            staffBookDetailsTitle.setVisibility(View.INVISIBLE);
+            staffBookDetailsTitle_content1.setVisibility(View.INVISIBLE);
+            staffBookDetailsTitle_content2.setVisibility(View.INVISIBLE);
+            personalInfo.setBackgroundColor(0xff4169E1);
+            personalInfo.setTextColor(0xffFFFFFF);
+            personalInfo.setText("个人信息");
+            staffRecording.setBackgroundColor(0xffF0F0F0);
+            staffRecording.setTextColor(0xff000000);
+            staffRecording.setText("员工簿");
+        } else {
+            basicTitle.setVisibility(View.INVISIBLE);
+            basicInfo_content1.setVisibility(View.INVISIBLE);
+            basicInfo_content2.setVisibility(View.INVISIBLE);
+            staffBookDetailsTitle.setVisibility(View.VISIBLE);
+            staffBookDetailsTitle_content1.setVisibility(View.VISIBLE);
+            staffBookDetailsTitle_content2.setVisibility(View.VISIBLE);
+            personalInfo.setBackgroundColor(0xffF0F0F0);
+            personalInfo.setTextColor(0xff000000);
+            personalInfo.setText("个人信息");
+            staffRecording.setBackgroundColor(0xff4169E1);
+            staffRecording.setTextColor(0xffFFFFFF);
+            staffRecording.setText("员工簿");
         }
     }
 
@@ -506,7 +720,7 @@ public class StaffDetailsActivity extends AppCompatActivity {
                 ContentValues contentValuesMaternityStatus = new ContentValues();
                 contentValuesMaternityStatus.put("maternityStatus", saved_maternityStatus);
                 getContentResolver().update(DemoProvider.URI, contentValuesMaternityStatus, "number = ?", new String[]{saved_id});//更新数据库
-                 break;
+                break;
             case R.id.phoneNum_correct_btn:
                 phoneNums_text.setEnabled(false);
                 String save_phoneNums = phoneNums_text.getText().toString();

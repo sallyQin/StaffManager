@@ -44,7 +44,8 @@ class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManager.Load
     private String address;
     private String qq;
     private String weChat;
-
+    private String eduExperience;
+    private String workExperience;
     @Override
     public Loader onCreateLoader(int id, Bundle args) {
 
@@ -150,8 +151,8 @@ class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManager.Load
             address = mCursor.getString(mCursor.getColumnIndex("address"));
             qq = mCursor.getString(mCursor.getColumnIndex("qq"));
             weChat = mCursor.getString(mCursor.getColumnIndex("weChat"));
-
-
+            eduExperience = mCursor.getString(mCursor.getColumnIndex("eduExperience"));
+            workExperience = mCursor.getString(mCursor.getColumnIndex("workExperience"));
         }
 
         final String save_name = name_text;
@@ -171,6 +172,9 @@ class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManager.Load
         final String save_address = address;
         final String save_qq = qq;
         final String save_weChat = weChat;
+        final String save_eduExperience = eduExperience;
+        final String save_workExperience = workExperience;
+
 
         decrement_button.setOnClickListener(new View.OnClickListener() {       //设置每个itemView“删除”按钮的监听器
             @Override
@@ -207,6 +211,8 @@ class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManager.Load
                 bundle.putString("save_address",save_address);
                 bundle.putString("save_qq",save_qq);
                 bundle.putString("save_weChat",save_weChat);
+                bundle.putString("save_eduExperience",save_eduExperience);
+                bundle.putString("save_workExperience",save_workExperience);
 
                 intent.putExtras(bundle);
                 mainActivity.startActivity(intent);

@@ -145,7 +145,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql_table = "create table staffsInfos(number INTEGER PRIMARY KEY,deptName TEXT,name TEXT,avatar TEXT,position TEXT,sex TEXT,nationalities TEXT,nativePlace TEXT,nation TEXT," +
-                "maternityStatus TEXT,birthDate TEXT,phoneNumber TEXT,officeSeat TEXT,mailAddress TEXT,address TEXT,qq TEXT,weChat TEXT)";
+                "maternityStatus TEXT,birthDate TEXT,phoneNumber TEXT,officeSeat TEXT,mailAddress TEXT,address TEXT,qq TEXT,weChat TEXT,eduExperience TEXT,workExperience TEXT)";
         db.execSQL(sql_table);
 
         ContentValues cv = new ContentValues();
@@ -168,6 +168,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cv.put("address",dataBase.address[i]);
             cv.put("qq",dataBase.qq[i]);
             cv.put("weChat",dataBase.weChat[i]);
+            cv.put("eduExperience",dataBase.eduExperience[i]);
+            cv.put("workExperience",dataBase.workExperience[i]);
+
             db.insert("staffsInfos", null, cv);
         }
     }

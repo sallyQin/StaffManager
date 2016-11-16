@@ -16,206 +16,144 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <LinearLayout
-        android:background="@drawable/details_title_background"
-        android:orientation="horizontal"
-        android:scaleType="fitXY"
-        android:layout_width="match_parent"
-        android:paddingTop="4dp"
-        android:layout_height="120dp" >
-
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/simpleDraweeView"
-            app:roundAsCircle="true"
-            app:placeholderImage="@drawable/default_avatar"
-            app:placeholderImageScaleType="centerCrop"
-            android:paddingTop="9dp"
-            android:layout_marginLeft="8dp"
-            android:layout_width="85dp"
-            android:layout_height="108dp"/>
         <LinearLayout
-            android:orientation="vertical"
+            android:background="@drawable/details_title_background"
+            android:orientation="horizontal"
+            android:scaleType="fitXY"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
-                android:layout_marginLeft="8dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:id="@+id/details_name"
-                    android:hint="填姓名"
-                    android:background="@null"
-                    android:textColorHint="#BEBEBE"
-                    android:textColor="@android:color/background_dark"
-                    android:imeOptions="actionDone"
-                    android:maxLength="4"
-                    android:inputType="text"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:gravity="top"
-                    android:layout_gravity="top"
-                    android:layout_width="wrap_content"
-                    android:layout_height="41dp" />
-                <View
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="41dp"/>
-                <TextView
-                    android:text="员工号："
-                    android:textColor="#696969"
-                    android:gravity="bottom"
-                    android:layout_gravity="top"
-                    android:textSize="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="21dp" />
-                <EditText
-                    android:id="@+id/staffNum_details"
-                    android:background="@null"
-                    android:hint="填后不可改"
-                    android:textColorHint="#BEBEBE"
-                    android:gravity="bottom"
-                    android:textColor="#696969"
-                    android:textSize="15sp"
-                    android:imeOptions="actionDone"
-                    android:layout_marginRight="10dp"
-                    android:maxLength="3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="28dp" />
-            </LinearLayout>
+            android:paddingTop="4dp"
+            android:layout_height="120dp" >
 
-            <LinearLayout
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/simpleDraweeView"
+                app:roundAsCircle="true"
+                app:placeholderImage="@drawable/default_avatar"
+                app:placeholderImageScaleType="centerCrop"
+                android:paddingTop="9dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
+                android:layout_width="85dp"
+                android:layout_height="108dp"/>
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="25dp">
-                <TextView
-                    android:text="任职部门："
-                    android:textColor="#696969"
-                    android:gravity="bottom"
-                    android:textSize="15sp"
-                    android:layout_marginRight="12dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/details_dept"
-                    android:background="@null"
-                    android:hint="不用填，系统自动填"
-                    android:enabled="false"
-                    android:textColorHint="#BEBEBE"
-                    android:textColor="#696969"
-                    android:textSize="15sp"
-                    android:maxLength="5"
-                    android:imeOptions="actionDone"
-                    android:layout_marginRight="20dp"
-                    android:gravity="top"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
-            </LinearLayout>
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_marginLeft="8dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/details_name"
+                        android:hint="填姓名"
+                        android:background="@null"
+                        android:textColorHint="#BEBEBE"
+                        android:textColor="@android:color/background_dark"
+                        android:imeOptions="actionDone"
+                        android:maxLength="4"
+                        android:inputType="text"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:gravity="top"
+                        android:layout_gravity="top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="41dp" />
+                    <View
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="41dp"/>
+                    <TextView
+                        android:text="员工号："
+                        android:textColor="#696969"
+                        android:gravity="bottom"
+                        android:layout_gravity="top"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp" />
+                    <EditText
+                        android:id="@+id/staffNum_details"
+                        android:background="@null"
+                        android:hint="填后不可改"
+                        android:textColorHint="#BEBEBE"
+                        android:gravity="bottom"
+                        android:textColor="#696969"
+                        android:textSize="15sp"
+                        android:imeOptions="actionDone"
+                        android:layout_marginRight="10dp"
+                        android:maxLength="3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp" />
+                </LinearLayout>
 
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginBottom="1dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="25dp">
-                <TextView
-                    android:text="职位名称："
-                    android:textColor="#696969"
-                    android:textSize="15sp"
-                    android:gravity="bottom"
-                    android:layout_marginRight="12dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/details_position"
-                    android:hint="填写职务"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:textColor="#696969"
-                    android:textSize="15sp"
-                    android:maxLength="5"
-                    android:imeOptions="actionDone"
-                    android:layout_marginRight="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"/>
+                <LinearLayout
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="1dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp">
+                    <TextView
+                        android:text="任职部门："
+                        android:textColor="#696969"
+                        android:gravity="bottom"
+                        android:textSize="15sp"
+                        android:layout_marginRight="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                    <EditText
+                        android:id="@+id/details_dept"
+                        android:background="@null"
+                        android:hint="不用填，系统自动填"
+                        android:enabled="false"
+                        android:textColorHint="#BEBEBE"
+                        android:textColor="#696969"
+                        android:textSize="15sp"
+                        android:maxLength="5"
+                        android:imeOptions="actionDone"
+                        android:layout_marginRight="20dp"
+                        android:gravity="top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginBottom="1dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp">
+                    <TextView
+                        android:text="职位名称："
+                        android:textColor="#696969"
+                        android:textSize="15sp"
+                        android:gravity="bottom"
+                        android:layout_marginRight="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                    <EditText
+                        android:id="@+id/details_position"
+                        android:hint="填写职务"
+                        android:textColorHint="#BEBEBE"
+                        android:background="@null"
+                        android:textColor="#696969"
+                        android:textSize="15sp"
+                        android:maxLength="5"
+                        android:imeOptions="actionDone"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"/>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="33dp">
-        <TextView
-            android:background="#F0F0F0"
-            android:drawableLeft="@drawable/personinfos_icon"
-            android:text="个人信息"
-            android:layout_gravity="center_vertical"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:paddingLeft="8dp"
-            android:paddingRight="5dp"
-            android:layout_width="93dp"
-            android:layout_height="match_parent" />
-        <View
-            android:background="#D6D6D6"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:layout_marginLeft="8dp"
-            android:text="基本信息"
-            android:textColor="#104E8B"
-            android:textSize="15sp"
-            android:gravity="center_vertical|left"
-            android:layout_gravity="center_vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
-        <View
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:id="@+id/infos_edit"
-            android:text="编辑栏"
-            android:padding="8dp"
-            android:layout_marginRight="20dp"
-            android:layout_gravity="center_vertical"
-            android:gravity="end"
-            android:textSize="13sp"
-            android:textColor="#5CACEE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp">
-        <View
-            android:background="#D6D6D6"
-            android:layout_width="93dp"
-            android:layout_height="1dp"/>
-        <View
-            android:layout_marginLeft="8dp"
-            android:background="#D6D6D6"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="33dp">
             <TextView
+                android:id="@+id/personalInfo"
                 android:background="#F0F0F0"
-                android:drawableLeft="@drawable/maleinfos_icon"
-                android:text="员工薄"
+                android:drawableLeft="@drawable/personinfos_icon"
+                android:text="个人信息"
                 android:layout_gravity="center_vertical"
                 android:textColor="@android:color/black"
                 android:textStyle="bold"
@@ -224,525 +162,714 @@
                 android:paddingLeft="8dp"
                 android:paddingRight="5dp"
                 android:layout_width="93dp"
-                android:layout_height="32dp" />
+                android:layout_height="match_parent" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:id="@+id/staffBookDetailsTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <View
+                        android:background="#D6D6D6"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:layout_marginLeft="8dp"
+                        android:text="员工薄详情"
+                        android:textColor="#104E8B"
+                        android:textSize="15sp"
+                        android:gravity="center_vertical|left"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/basicTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <View
+                        android:background="#D6D6D6"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:layout_marginLeft="8dp"
+                        android:text="基本信息"
+                        android:textColor="#104E8B"
+                        android:textSize="15sp"
+                        android:gravity="center_vertical|left"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+                    <View
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:id="@+id/infos_edit"
+                        android:text="编辑栏"
+                        android:padding="8dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="end"
+                        android:textSize="13sp"
+                        android:textColor="#5CACEE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
             <View
                 android:background="#D6D6D6"
                 android:layout_width="93dp"
                 android:layout_height="1dp"/>
+            <View
+                android:layout_marginLeft="8dp"
+                android:background="#D6D6D6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
         </LinearLayout>
-        <View
-            android:background="#D6D6D6"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"/>
         <LinearLayout
-            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="20dp">
-            <TextView
-                android:text="姓名"
-                android:layout_marginLeft="8dp"
-                android:textSize="12sp"
-                android:layout_marginRight="10dp"
-                android:layout_width="48dp"
-                android:layout_height="match_parent" />
-            <EditText
-                android:id="@+id/name_text"
-                android:hint="填写姓名"
-                android:textColorHint="#BEBEBE"
-                android:background="@null"
-                android:inputType="text"
-                android:maxLength="4"
-                android:textSize="12sp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="16dp" />
+                android:layout_height="33dp">
+                <TextView
+                    android:id="@+id/staffRecording"
+                    android:background="#F0F0F0"
+                    android:drawableLeft="@drawable/maleinfos_icon"
+                    android:text="员工薄"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="5dp"
+                    android:layout_width="93dp"
+                    android:layout_height="32dp" />
+                <View
+                    android:background="#D6D6D6"
+                    android:layout_width="93dp"
+                    android:layout_height="1dp"/>
+            </LinearLayout>
+            <View
+                android:background="#D6D6D6"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="33dp">
+                <TextView
+                    android:id="@+id/staffBookDetailsTitle_content1"
+                    android:layout_marginTop="10dp"
+                    android:text="教育经历："
+                    android:textColor="#030303"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="8dp"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:layout_height="23dp">
+                </TextView>
+                <LinearLayout
+                    android:id="@+id/basicInfo_content1"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="23dp">
+                    <TextView
+                        android:text="姓名"
+                        android:layout_marginLeft="8dp"
+                        android:textSize="12sp"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="48dp"
+                        android:layout_height="match_parent" />
+                    <EditText
+                        android:id="@+id/name_text"
+                        android:hint="填写姓名"
+                        android:textColorHint="#BEBEBE"
+                        android:background="@null"
+                        android:inputType="text"
+                        android:maxLength="4"
+                        android:textSize="12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="16dp" />
+                </LinearLayout>
+            </FrameLayout>
         </LinearLayout>
+        <LinearLayout
 
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
-            android:background="#F0F0F0"
-            android:layout_width="93dp"
-            android:layout_height="match_parent">
-        <View
-            android:layout_width="93dp"
-            android:layout_weight="1"
-            android:layout_height="0dp" />
-          <TextView
-              android:id="@+id/save_icon"
-              android:layout_marginLeft="10dp"
-              android:gravity="center"
-              android:drawableLeft="@android:drawable/ic_menu_save"
-              android:textStyle="bold"
-              android:textSize="13sp"
-              android:text="保存"
-              android:layout_marginBottom="30dp"
-              android:layout_gravity="bottom"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content" />
-        </LinearLayout>
-        <View
-            android:background="#D6D6D6"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"/>
-        <LinearLayout
-            android:layout_marginLeft="8dp"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:text="性别"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/sex_text"
-                    android:hint="填写性别,填后不可改"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:maxLength="2"
-                    android:inputType="text"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:text="籍贯"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/nativePlace_text"
-                    android:hint="填写籍贯,填后不可改"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:maxLength="3"
-                    android:inputType="text"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:text="国籍"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/nationality_text"
-                    android:hint="填写国籍,填后不可改"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:maxLength="2"
-                    android:inputType="text"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:text="民族"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/nation_text"
-                    android:hint="填写民族,填后不可改"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:maxLength="2"
-                    android:inputType="text"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:text="婚姻状况"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/details_maternityStatus"
-                    android:hint="填写婚姻状况"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:imeOptions="actionDone"
-                    android:maxLength="2"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp" />
+                android:orientation="vertical"
+                android:background="#F0F0F0"
+                android:layout_width="93dp"
+                android:layout_height="match_parent">
                 <View
+                    android:layout_width="93dp"
                     android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"/>
-                <ImageView
-                    android:id="@+id/maternityStatus_modify_btn"
-                    android:onClick="modifyBtnClicked"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundmodify_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-                <ImageView
-                    android:id="@+id/maternityStatus_correct_btn"
-                    android:onClick="confirmedBtnClicked"
-                    android:layout_marginRight="3dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundcorrect_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
+                    android:layout_height="0dp" />
                 <TextView
-                    android:text="出生年月"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/birthDate_text"
-                    android:hint="格式：xxxx年-xx月-xx日,填后不可改"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:inputType="text"
-                    android:imeOptions="actionDone"
-                    android:textSize="12sp"
-                    android:maxLines="1"
-                    android:maxLength="10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_marginTop="12dp"
-                    android:text="联系方式"
-                    android:textColor="@android:color/black"
-                    android:textSize="15sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="26dp" />
-                <View
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"/>
-                <TextView
-                    android:id="@+id/contacts_edit"
-                    android:text="编辑栏"
-                    android:padding="8dp"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="end"
+                    android:id="@+id/save_icon"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:drawableLeft="@android:drawable/ic_menu_save"
+                    android:textStyle="bold"
                     android:textSize="13sp"
-                    android:textColor="#5CACEE"
-                    android:layout_width="wrap_content"
+                    android:text="保存"
+                    android:layout_marginBottom="30dp"
+                    android:layout_gravity="bottom"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <View
                 android:background="#D6D6D6"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"/>
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"/>
-            <LinearLayout
-                android:layout_marginTop="12dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:text="手机号"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/staffBookDetailsTitle_content2"
+                    android:layout_marginLeft="8dp"
+                    android:weightSum="12"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                 <LinearLayout
+                     android:orientation="vertical"
+                     android:layout_weight="4"
+                     android:layout_marginBottom="10dp"
+                     android:layout_height="0dp"
+                     android:weightSum="8"
+                     android:layout_width="match_parent">
                 <EditText
-                    android:id="@+id/details_phoneNums"
-                    android:hint="填写手机号"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:inputType="phone"
-                    android:imeOptions="flagNoExtractUi|actionDone"
-                    android:maxLength="11"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp" />
-                <View
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"/>
-                <ImageView
-                    android:id="@+id/phoneNum_modify_btn"
-                    android:onClick="modifyBtnClicked"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundmodify_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-                <ImageView
-                    android:id="@+id/phoneNum_correct_btn"
-                    android:onClick="confirmedBtnClicked"
-                    android:layout_marginRight="3dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundcorrect_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:text="办公座位"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/details_officeSeat"
-                    android:hint="填写办公座位号"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:imeOptions="flagNoExtractUi|actionDone"
-                    android:inputType="number"
-                    android:maxLength="4"
-                    android:maxLines="1"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp" />
-                <View
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"/>
-                <ImageView
-                    android:id="@+id/fixlinePhone_modify_btn"
-                    android:onClick="modifyBtnClicked"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundmodify_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-                <ImageView
-                    android:id="@+id/fixlinePhone_correct_btn"
-                    android:onClick="confirmedBtnClicked"
-                    android:layout_marginRight="3dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundcorrect_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:text="邮箱"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/details_mailbox"
-                    android:hint="填写邮箱信息"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
+                    android:id="@+id/edu_editText"
+                    android:inputType="textMultiLine"
+                    android:textColor="#454545"
+                    android:gravity="top"
+                    android:singleLine="false"
                     android:imeOptions="actionDone"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp" />
+                    android:scrollHorizontally="false"
+                    android:layout_width="match_parent"
+                    android:layout_weight="7"
+                    android:layout_height="0dp"
+                    android:textSize="13sp"/>
+                 <TextView
+                     android:id="@+id/tv_num"
+                     android:textSize="12sp"
+                     android:layout_gravity="bottom|right"
+                     android:layout_weight="1"
+                     android:layout_width="wrap_content"
+                     android:layout_height="0dp" />
+                 </LinearLayout>
                 <View
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"/>
-                <ImageView
-                    android:id="@+id/mailbox_modify_btn"
-                    android:onClick="modifyBtnClicked"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundmodify_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-                <ImageView
-                    android:id="@+id/mailbox_correct_btn"
-                    android:onClick="confirmedBtnClicked"
-                    android:layout_marginRight="3dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundcorrect_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:text="通讯地址"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/details_address"
-                    android:hint="填写通讯地址"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:imeOptions="actionDone"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:textSize="12sp"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="16dp" />
-                <ImageView
-                    android:id="@+id/address_modify_btn"
-                    android:onClick="modifyBtnClicked"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundmodify_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-                <ImageView
-                    android:id="@+id/address_correct_btn"
-                    android:onClick="confirmedBtnClicked"
-                    android:layout_marginRight="3dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundcorrect_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:text="QQ号"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/details_qq"
-                    android:hint="填写QQ号码"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:imeOptions="actionDone"
-                    android:digits="1234567890"
-                    android:maxLines="1"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="16dp" />
-                <View
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"/>
-                <ImageView
-                    android:id="@+id/qq_modify_btn"
-                    android:onClick="modifyBtnClicked"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundmodify_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-                <ImageView
-                    android:id="@+id/qq_correct_btn"
-                    android:onClick="confirmedBtnClicked"
-                    android:layout_marginRight="3dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundcorrect_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-                <TextView
-                    android:text="微信号"
-                    android:textSize="12sp"
-                    android:layout_marginRight="10dp"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:id="@+id/details_weChatNum"
-                    android:hint="填写微信号"
-                    android:textColorHint="#BEBEBE"
-                    android:background="@null"
-                    android:imeOptions="actionDone"
-                    android:maxLines="1"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" />
-                <View
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"/>
-                <ImageView
-                    android:id="@+id/weChatNum_modify_btn"
-                    android:onClick="modifyBtnClicked"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundmodify_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-                <ImageView
-                    android:id="@+id/weChatNum_correct_btn"
-                    android:onClick="confirmedBtnClicked"
-                    android:layout_marginRight="3dp"
-                    android:layout_gravity="end|center_vertical"
-                    android:src="@drawable/roundcorrect_corner_image"
-                    android:layout_width="20dp"
-                    android:layout_height="16dp" />
-            </LinearLayout>
-        </LinearLayout>
+                    android:background="#D6D6D6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+                 <TextView
+                     android:layout_weight="1"
+                     android:layout_marginTop="10dp"
+                     android:text="工作经历："
+                     android:textColor="#030303"
+                     android:textSize="14sp"
+                     android:textStyle="bold"
+                     android:layout_marginLeft="8dp"
+                     android:inputType="text"
+                     android:layout_width="match_parent"
+                     android:layout_height="0dp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="7"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="10dp"
+                        android:layout_height="0dp"
+                        android:weightSum="14">
+                        <EditText
+                            android:id="@+id/work_editText"
+                            android:inputType="textMultiLine"
+                            android:gravity="top"
+                            android:singleLine="false"
+                            android:textColor="#454545"
+                            android:imeOptions="actionDone"
+                            android:scrollHorizontally="false"
+                            android:layout_width="match_parent"
+                            android:layout_weight="13"
+                            android:layout_height="0dp"
+                            android:textSize="13sp"/>
+                        <TextView
+                            android:id="@+id/work_num"
+                            android:textSize="12sp"
+                            android:layout_gravity="bottom|right"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp" />
+                    </LinearLayout>
 
+               </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/basicInfo_content2"
+                    android:layout_marginLeft="8dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="性别"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/sex_text"
+                            android:hint="填写性别,填后不可改"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:maxLength="2"
+                            android:inputType="text"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="籍贯"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/nativePlace_text"
+                            android:hint="填写籍贯,填后不可改"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:maxLength="3"
+                            android:inputType="text"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="国籍"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/nationality_text"
+                            android:hint="填写国籍,填后不可改"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:maxLength="2"
+                            android:inputType="text"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="民族"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/nation_text"
+                            android:hint="填写民族,填后不可改"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:maxLength="2"
+                            android:inputType="text"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="婚姻状况"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/details_maternityStatus"
+                            android:hint="填写婚姻状况"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:imeOptions="actionDone"
+                            android:maxLength="2"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp" />
+                        <View
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:id="@+id/maternityStatus_modify_btn"
+                            android:onClick="modifyBtnClicked"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundmodify_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                        <ImageView
+                            android:id="@+id/maternityStatus_correct_btn"
+                            android:onClick="confirmedBtnClicked"
+                            android:layout_marginRight="3dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundcorrect_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="出生年月"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/birthDate_text"
+                            android:hint="格式：xxxx年-xx月-xx日,填后不可改"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:inputType="text"
+                            android:imeOptions="actionDone"
+                            android:textSize="12sp"
+                            android:maxLines="1"
+                            android:maxLength="10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:text="联系方式"
+                            android:textColor="@android:color/black"
+                            android:textSize="15sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp" />
+                        <View
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"/>
+                        <TextView
+                            android:id="@+id/contacts_edit"
+                            android:text="编辑栏"
+                            android:padding="8dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="end"
+                            android:textSize="13sp"
+                            android:textColor="#5CACEE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <View
+                        android:background="#D6D6D6"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+                    <LinearLayout
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="手机号"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/details_phoneNums"
+                            android:hint="填写手机号"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:inputType="phone"
+                            android:imeOptions="flagNoExtractUi|actionDone"
+                            android:maxLength="11"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp" />
+                        <View
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:id="@+id/phoneNum_modify_btn"
+                            android:onClick="modifyBtnClicked"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundmodify_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                        <ImageView
+                            android:id="@+id/phoneNum_correct_btn"
+                            android:onClick="confirmedBtnClicked"
+                            android:layout_marginRight="3dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundcorrect_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="办公座位"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/details_officeSeat"
+                            android:hint="填写办公座位号"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:imeOptions="flagNoExtractUi|actionDone"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:maxLines="1"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp" />
+                        <View
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:id="@+id/fixlinePhone_modify_btn"
+                            android:onClick="modifyBtnClicked"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundmodify_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                        <ImageView
+                            android:id="@+id/fixlinePhone_correct_btn"
+                            android:onClick="confirmedBtnClicked"
+                            android:layout_marginRight="3dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundcorrect_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="邮箱"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/details_mailbox"
+                            android:hint="填写邮箱信息"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:imeOptions="actionDone"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp" />
+                        <View
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:id="@+id/mailbox_modify_btn"
+                            android:onClick="modifyBtnClicked"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundmodify_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                        <ImageView
+                            android:id="@+id/mailbox_correct_btn"
+                            android:onClick="confirmedBtnClicked"
+                            android:layout_marginRight="3dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundcorrect_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="通讯地址"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/details_address"
+                            android:hint="填写通讯地址"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textSize="12sp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="16dp" />
+                        <ImageView
+                            android:id="@+id/address_modify_btn"
+                            android:onClick="modifyBtnClicked"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundmodify_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                        <ImageView
+                            android:id="@+id/address_correct_btn"
+                            android:onClick="confirmedBtnClicked"
+                            android:layout_marginRight="3dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundcorrect_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="QQ号"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/details_qq"
+                            android:hint="填写QQ号码"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:imeOptions="actionDone"
+                            android:digits="1234567890"
+                            android:maxLines="1"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp" />
+                        <View
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:id="@+id/qq_modify_btn"
+                            android:onClick="modifyBtnClicked"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundmodify_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                        <ImageView
+                            android:id="@+id/qq_correct_btn"
+                            android:onClick="confirmedBtnClicked"
+                            android:layout_marginRight="3dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundcorrect_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp">
+                        <TextView
+                            android:text="微信号"
+                            android:textSize="12sp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="48dp"
+                            android:layout_height="match_parent" />
+                        <EditText
+                            android:id="@+id/details_weChatNum"
+                            android:hint="填写微信号"
+                            android:textColorHint="#BEBEBE"
+                            android:background="@null"
+                            android:imeOptions="actionDone"
+                            android:maxLines="1"
+                            android:textSize="12sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" />
+                        <View
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"/>
+                        <ImageView
+                            android:id="@+id/weChatNum_modify_btn"
+                            android:onClick="modifyBtnClicked"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundmodify_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                        <ImageView
+                            android:id="@+id/weChatNum_correct_btn"
+                            android:onClick="confirmedBtnClicked"
+                            android:layout_marginRight="3dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:src="@drawable/roundcorrect_corner_image"
+                            android:layout_width="20dp"
+                            android:layout_height="16dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
 </ScrollView>
 
 
