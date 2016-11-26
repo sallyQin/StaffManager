@@ -5,13 +5,15 @@ import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         otherDept_line = findViewById(R.id.other_line);
         incrementBtn = (ImageView) findViewById(R.id.incrementBtn);
         search_bar = (RelativeLayout) findViewById(R.id.search_bar);
-
 
         search_bar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.mainActivity = MainActivity.this;
 
         getSupportLoaderManager().restartLoader(1, null, adapter);//LoaderManager就是加载器的管理器，一个LoaderManager可管理一个或多个Loader，一个Activity只能有一个LoadManager。LoaderManager管理Loader的初始化，重启和销毁操作。
-    }
+      }
 
     public void tabClicked(View view){  //设置点击每个tab栏的监听事件。
 
@@ -181,5 +182,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }

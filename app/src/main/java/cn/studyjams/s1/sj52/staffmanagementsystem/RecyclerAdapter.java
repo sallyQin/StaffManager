@@ -10,6 +10,7 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 
 /**
@@ -216,6 +218,8 @@ class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManager.Load
 
                 intent.putExtras(bundle);
                 mainActivity.startActivity(intent);
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                Log.d("个人信息",gson.toJson(bundle));
 
             }
         });

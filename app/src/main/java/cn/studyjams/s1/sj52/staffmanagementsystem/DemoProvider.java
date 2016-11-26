@@ -38,7 +38,7 @@ public class DemoProvider extends ContentProvider {
     @Override
     public Uri insert(Uri uri, ContentValues values) {
         databaseHelper.getReadableDatabase().insert("staffsInfos", null, values);
-        getContext().getContentResolver().notifyChange(uri, null);
+        getContext().getContentResolver().notifyChange(uri, null);//来通知注册在此URI上的访问者
         return null;
     }
 

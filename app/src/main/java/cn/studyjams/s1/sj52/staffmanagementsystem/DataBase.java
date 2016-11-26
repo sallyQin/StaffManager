@@ -2,6 +2,9 @@ package cn.studyjams.s1.sj52.staffmanagementsystem;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.provider.Settings;
+
+import com.google.gson.Gson;
 
 /**
  * Created by 1 on 2016/10/20.
@@ -16,7 +19,7 @@ public class DataBase {         //所有人员信息数据
             "技术部","技术部","技术部","技术部","技术部","技术部","技术部","技术部","技术部",
             "销售部","销售部","销售部","销售部","销售部","销售部","销售部","销售部","销售部","销售部",
             "管理层","管理层","管理层","管理层"};                                                    //部门
-     String [] staffsName= new String[]{"张晓楠","石玉兰","尚文清","杜喜喜","杨海清","孙丽萍","丁冬芹","陈桂平","李开英",
+     String [] staffsName = new String[]{"张晓楠","石玉兰","尚文清","杜喜喜","杨海清","孙丽萍","丁冬芹","陈桂平","李开英",
             "张凤霞","杜茂仁","李金云","石俊梅","戴双宝",
             "杜元晓","刘文明","王焕锁","高文利","张海宝","孙瑞军","高文军","张飞雄","石胜厚","刘御","高志新","尚文忠",
             "刘双正","郭山彤","康志强","马仁毅","尤帅齐","孙彩武","邬肖任","赵单羽","陈自萤","文彩依","顾西风","苏普","马力峰","李正","李小帆",
@@ -374,6 +377,10 @@ public class DataBase {         //所有人员信息数据
             "　　4、负责分店员工考勤、薪酬、绩效评估、人员异动等情况的分析及处理;\n" +
             "　　5、负责分店培训需求的调查，培训计划的制订，培训活动的组织与开展，培训结果总结及效果反馈与跟进;\n" +
             "　　6、负责分店员工关系管理及分店康体活动的策划、组织与开展;"};//工作经历
+
+
+
+
     //    protected DataBase(Parcel deptNames[],staffsName[],staffNumbers[],avatar[],position[],sex[],nativePlace[],nationalities[],nation[],maternityStatus[],
 //                       birthDate[], phoneNumber[],officeSeat[],mailAddress[],address[],qq[],weChat[]) {
 //
@@ -462,4 +469,5 @@ public class DataBase {         //所有人员信息数据
 //        parcel.writeStringArray(qq);
 //        parcel.writeStringArray(weChat);
 //    }
+
 }

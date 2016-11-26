@@ -2,13 +2,9 @@ package cn.studyjams.s1.sj52.staffmanagementsystem;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.os.Parcel;
-import android.os.Parcelable;
 
-import java.io.Serializable;
 
 /**
  * Created by Apc on 2016/10/8.

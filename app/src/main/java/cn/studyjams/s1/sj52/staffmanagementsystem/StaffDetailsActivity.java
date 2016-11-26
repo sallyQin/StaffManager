@@ -28,6 +28,8 @@ import android.widget.Toast;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 
+
+
 public class StaffDetailsActivity extends AppCompatActivity {
     EditText details_name_text;
     EditText staffNum_details_text;
@@ -59,7 +61,7 @@ public class StaffDetailsActivity extends AppCompatActivity {
     LinearLayout basicInfo_content2;
     TextView edu_hasNum; // "教育经历"用来显示剩余字数
     EditText edu_editText; // "教育经历"编辑框
-    int edu_num = 250;// "教育经历"限制的最大字数
+    int edu_num = 180;// "教育经历"限制的最大字数
     TextView workExp_hasNum;// "工作经历"用来显示剩余字数
     EditText workExp_editText;// "工作经历"编辑框
     int workExp_num = 420;// "工作经历"限制的最大字数
@@ -372,10 +374,20 @@ public class StaffDetailsActivity extends AppCompatActivity {
             }
 
             if (!TextUtils.isEmpty(bundle.getString("save_eduExperience"))) {
-                edu_editText.setText(bundle.getString("save_eduExperience"));
+                if (bundle.getString("save_eduExperience").length() <= edu_num) {
+                    edu_editText.setText(bundle.getString("save_eduExperience"));
+                } else {//原先数据库中超过限定字数的情况
+                    edu_editText.setText(bundle.getString("save_eduExperience").substring(0, edu_num));
+                }
             }
+
             if (!TextUtils.isEmpty(bundle.getString("save_workExperience"))) {
-                workExp_editText.setText(bundle.getString("save_workExperience"));
+                if (bundle.getString("save_workExperience").length() <= workExp_num) {
+                    workExp_editText.setText(bundle.getString("save_workExperience"));
+                } else { //原先数据库中超过限定字数的情况
+                    workExp_editText.setText(bundle.getString("save_workExperience").substring(0, workExp_num));
+                }
+
             }
         }
 
@@ -417,8 +429,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
-                            contentValues.put("eduExperience",edu_editText.getText().toString());
-                            contentValues.put("workExperience",workExp_editText.getText().toString());
+                            contentValues.put("eduExperience", edu_editText.getText().toString());
+                            contentValues.put("workExperience", workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
                         } else if (num == 0 && staffNum_details_text.getText().toString().startsWith("2")) { //2开头的，部门为"行政部"。
@@ -439,8 +451,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
-                            contentValues.put("eduExperience",edu_editText.getText().toString());
-                            contentValues.put("workExperience",workExp_editText.getText().toString());
+                            contentValues.put("eduExperience", edu_editText.getText().toString());
+                            contentValues.put("workExperience", workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
                         } else if (num == 0 && staffNum_details_text.getText().toString().startsWith("3")) { //3开头的，部门为"技术部"。
@@ -461,8 +473,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
-                            contentValues.put("eduExperience",edu_editText.getText().toString());
-                            contentValues.put("workExperience",workExp_editText.getText().toString());
+                            contentValues.put("eduExperience", edu_editText.getText().toString());
+                            contentValues.put("workExperience", workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
                         } else if (num == 0 && staffNum_details_text.getText().toString().startsWith("4")) { //4开头的，部门为"销售部"。
@@ -483,8 +495,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
-                            contentValues.put("eduExperience",edu_editText.getText().toString());
-                            contentValues.put("workExperience",workExp_editText.getText().toString());
+                            contentValues.put("eduExperience", edu_editText.getText().toString());
+                            contentValues.put("workExperience", workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
                         } else if (num == 0 && staffNum_details_text.getText().toString().startsWith("8")) { //8开头的，部门为"管理层"。
@@ -505,8 +517,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
-                            contentValues.put("eduExperience",edu_editText.getText().toString());
-                            contentValues.put("workExperience",workExp_editText.getText().toString());
+                            contentValues.put("eduExperience", edu_editText.getText().toString());
+                            contentValues.put("workExperience", workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
                         } else if (num == 0) { //员工以其它数字开头的，部门为"其他部"。
@@ -527,8 +539,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
-                            contentValues.put("eduExperience",edu_editText.getText().toString());
-                            contentValues.put("workExperience",workExp_editText.getText().toString());
+                            contentValues.put("eduExperience", edu_editText.getText().toString());
+                            contentValues.put("workExperience", workExp_editText.getText().toString());
 
                             getContentResolver().insert(DemoProvider.URI, contentValues);
                         } else if (num == 1) {  //当此员工号已存在时，点击保存更新的内容。
@@ -547,8 +559,8 @@ public class StaffDetailsActivity extends AppCompatActivity {
                             contentValues.put("address", address_text.getText().toString());
                             contentValues.put("qq", qq_text.getText().toString());
                             contentValues.put("weChat", weChatNum_text.getText().toString());
-                            contentValues.put("eduExperience",edu_editText.getText().toString());
-                            contentValues.put("workExperience",workExp_editText.getText().toString());
+                            contentValues.put("eduExperience", edu_editText.getText().toString());
+                            contentValues.put("workExperience", workExp_editText.getText().toString());
 
                             String where = "number = ?";
                             String[] whereArgs = new String[]{staffNum_details_text.getText().toString()};
