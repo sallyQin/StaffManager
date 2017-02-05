@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * Created by 1 on 2016/11/8.
  */
-public class SearchAdapter extends RecyclerView.Adapter implements LoaderManager.LoaderCallbacks{
+public class SearchAdapter extends RecyclerView.Adapter implements LoaderManager.LoaderCallbacks{  //recyclerView + 异步信息查询
     SearchActivity searchActivity;
 
     private Cursor sCursor;

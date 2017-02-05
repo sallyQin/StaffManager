@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import static cn.studyjams.s1.sj52.staffmanagementsystem.SearchAdapter.mData;
 
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity {  //“搜索框”界面
     ImageView returnArrow;//返回箭头
     ImageView ivDeleteText; //搜索框中的删除按钮
     EditText etSearch;  //搜索框中的文本框

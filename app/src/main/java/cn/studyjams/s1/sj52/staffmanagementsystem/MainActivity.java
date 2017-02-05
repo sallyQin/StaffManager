@@ -15,14 +15,14 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {  //主界面
 
-    TextView admin;
-    TextView financial;
-    TextView technical;
-    TextView sales;
-    TextView management;
-    TextView otherDept;
+    TextView admin;//行政部tab
+    TextView financial;//财务部tab
+    TextView technical;//技术部tab
+    TextView sales; //销售部tab
+    TextView management;//管理层tab
+    TextView otherDept; //其他部tab
     View admin_line;
     View financial_line;
     View technical_line;
@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         incrementBtn = (ImageView) findViewById(R.id.incrementBtn);
         search_bar = (RelativeLayout) findViewById(R.id.search_bar);
 
+        /**设置“搜索框”监听器**/
         search_bar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-        incrementBtn.setOnClickListener(new View.OnClickListener() {   //设置点击“增加”按钮的监听器
+        /**设置点击“增加”按钮的监听器**/
+        incrementBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,StaffDetailsActivity.class);
@@ -112,10 +113,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerview.setAdapter(adapter);
         adapter.mainActivity = MainActivity.this;
 
-        getSupportLoaderManager().restartLoader(1, null, adapter);//LoaderManager就是加载器的管理器，一个LoaderManager可管理一个或多个Loader，一个Activity只能有一个LoadManager。LoaderManager管理Loader的初始化，重启和销毁操作。
+        getSupportLoaderManager().restartLoader(1, null, adapter);//*LoaderManager就是加载器的管理器，一个LoaderManager可管理一个或多个Loader，
+        // 一个Activity只能有一个LoadManager. LoaderManager管理Loader的初始化，重启和销毁操作。
       }
 
-    public void tabClicked(View view){  //设置点击每个tab栏的监听事件。
+    /**设置点击每个tab栏的监听事件。**/
+    public void tabClicked(View view){
 
         switch (view.getId()){
             case R.id.admin:

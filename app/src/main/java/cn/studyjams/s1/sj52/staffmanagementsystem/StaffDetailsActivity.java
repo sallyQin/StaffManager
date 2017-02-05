@@ -30,7 +30,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 
 
-public class StaffDetailsActivity extends AppCompatActivity {
+public class StaffDetailsActivity extends AppCompatActivity {   //员工详情界面
     EditText details_name_text;
     EditText staffNum_details_text;
     EditText details_dept;
@@ -226,7 +226,7 @@ public class StaffDetailsActivity extends AppCompatActivity {
         /**
          * check 个人信息或员工薄是否在被点中的状态
          **/
-        personalInfo.setOnClickListener(new View.OnClickListener() {
+        personalInfo.setOnClickListener(new View.OnClickListener() { //
             @Override
             public void onClick(View v) {
                 checkStaffRecordingStatus(false);

@@ -10,7 +10,7 @@ import android.support.annotation.Nullable;
 /**
  * Created by Apc on 2016/10/9.
  */
-public class DemoProvider extends ContentProvider {
+public class DemoProvider extends ContentProvider { //通过DemoProvider对SQLITE做增、删、改、查。
 
     static final Uri URI = Uri.parse("content://sally.staffmanagementsystem");
     DatabaseHelper databaseHelper;

@@ -25,7 +25,7 @@ import com.google.gson.GsonBuilder;
 /**
  * Created by Apc on 2016/10/9.
  */
-class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManager.LoaderCallbacks {
+class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManager.LoaderCallbacks {  //recyclerView + 异步信息查询
 
     MainActivity mainActivity;
     private Cursor mCursor;
@@ -177,12 +177,15 @@ class RecyclerAdapter extends RecyclerView.Adapter implements LoaderManager.Load
         final String save_eduExperience = eduExperience;
         final String save_workExperience = workExperience;
 
-
-        decrement_button.setOnClickListener(new View.OnClickListener() {       //设置每个itemView“删除”按钮的监听器
+/**
+ * 设置每个itemView“删除”按钮的监听器
+ * **/
+        decrement_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(mCursor.moveToPosition(position)){
-                    ContentResolver cr = mainActivity.getContentResolver(); //外界的程序通过ContentResolver接口可以访问ContentProvider提供的数据，在Activity当中通过getContentResolver()可以得到当前应用的 ContentResolver实例
+                    ContentResolver cr = mainActivity.getContentResolver(); //外界的程序通过ContentResolver接口可以访问ContentProvider提供的数据，
+                    // 在Activity当中通过getContentResolver()可以得到当前应用的 ContentResolver实例。
                     String whereName = "Number = ?";
                     String[] selectionArgsnName = { save_number};
                     cr.delete(DemoProvider.URI, whereName, selectionArgsnName);
