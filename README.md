@@ -9,4 +9,4 @@
 
 演示：
 
-![image](https://github.com/sallyQin/PunchVillain/raw/master/app/src/main/res/drawable/readme_display.gif)
+![image](https://github.com/sallyQin/StaffManager/raw/master/app/src/main/res/drawable/readme_display.gif)
